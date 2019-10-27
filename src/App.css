@@ -1,0 +1,163 @@
+
+
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+
+.-content-center {
+  width: 90% !important;
+  margin: 0 auto;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+input#inlineCheckboxtrue,input#inlineCheckboxfalse {
+  width: 20px;
+  height: 30px;
+  margin-left: 10px;
+}
+.wrap{
+width : 100%;
+}
+
+.-content-center {
+  width: 90% !important;
+  margin: 0 auto;
+}
+
+body{
+
+  font-family: 'Nunito', sans-serif !important;
+}
+
+input#inlineCheckboxtrue,input#inlineCheckboxfalse {
+  width: 20px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.flex{
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.nav-brand{
+  font-weight: bold;
+    font-size: 20px;
+}
+
+ul{
+  display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+}
+
+li{
+  padding: 20px;
+  padding-top: 35px;
+}
+
+a{
+  font-size: 14px;
+  color: #000 !important;
+}
+
+
+.center{
+
+  width: 5rem !important;
+  height: 5rem !important;
+}
+
+.top{
+
+  width: 12rem !important;
+    height: 12rem !important;
+    text-align: center;
+}
+
+.content-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-right{
+  width: 80%;
+}
+
+.form-control{
+width: 80% !important;
+}
+
+th{
+  font-weight: 100 !important
+}
+
+.logo{
+  height: 50px;
+}
+
+.m_form-container{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.m-form_img{
+  height: 451px;
+}
+
+.m_content-form{
+  width: 50%;
+}
+
+.shadow{
+  box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);
+}
+
+.mt-7{
+  margin-top: 80px;
+}
+
+.head{
+  margin: 0;
+  font-size: 28px;
+  padding-bottom: 26.240px;
+  font-weight: 600;
+}
+
+.ngtvml5{
+  margin-left: -5px;
+}
+
+/* ---- */
+
+.checkbox{
+
+    width: 20px;
+    height: 20px;
+    margin-left: 5px !important;
+    margin-top: 3px  !important;
+}
+
