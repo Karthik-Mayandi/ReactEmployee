@@ -103,12 +103,12 @@ a{
 }
 
 .text-right{
-  width: 80%;
+text-align: right;
 }
 
-.form-control{
+/* .form-control{
 width: 80% !important;
-}
+} */
 
 th{
   font-weight: 100 !important
@@ -120,7 +120,7 @@ th{
 
 .m_form-container{
   display: flex;
-  flex-direction: row-reverse;
+
   justify-content: space-between;
 }
 
@@ -129,7 +129,7 @@ th{
 }
 
 .m_content-form{
-  width: 50%;
+  width: 40%;
 }
 
 .shadow{
