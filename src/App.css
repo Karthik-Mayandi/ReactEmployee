@@ -78,7 +78,7 @@ li{
 }
 
 a{
-  font-size: 14px;
+  font-size: 18px;
   color: #000 !important;
 }
 
@@ -161,3 +161,6 @@ th{
     margin-top: 3px  !important;
 }
 
+li:nth-child(2){
+  padding-right: 0px;
+}
