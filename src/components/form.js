@@ -57,6 +57,7 @@ componentDidMount() {
                     
                
                         <div className="form-group">
+                            <label className="m-0"> First Name :</label>
                                 <Field
                                 name="firstName"
                                 type="text"
@@ -68,6 +69,7 @@ componentDidMount() {
                                 {errors.firstName && <div className="text-danger">{errors.firstName}</div>}
                             </div>
                             <div className="form-group">
+                            <label className="m-0"> Last Name :</label>
                                 <Field
                                 name="lastName"
                                 type="text"
@@ -78,6 +80,7 @@ componentDidMount() {
                                 {errors.lastName && <div className="text-danger">{errors.lastName}</div>}
                             </div>
                             <div className="form-group">
+                            <label className="m-0"> Email :</label>
                                 <Field
                                 name="email"
                                 type="text"
@@ -87,6 +90,7 @@ componentDidMount() {
                                 {errors.email && <div className="text-danger">{errors.email}</div>}
                             </div>
                             <div className="form-group">
+                            <label className="m-0"> Emp code :</label>
                                 <Field
                                 name="empCode"
                                 type="text"
@@ -96,6 +100,8 @@ componentDidMount() {
                                 {errors.empCode && <div className="text-danger">{errors.empCode}</div>}
                             </div>
                             <div className="form-group">
+                           
+
                             <label className="form-check-label">Manager Code : </label><br />
                             <Field component="select" className="form-control" name="managerCode">
                                 <option>--Select--</option>
@@ -112,6 +118,7 @@ componentDidMount() {
                                 {/* {errors.IsManager && <div className="text-danger">{errors.IsManager}</div>} */}
                             </div>
                             <div className="form-group">
+                            <label className="m-0"> TimeStamp :</label>
                                 <Field
                                     name="TimeStamp"
                                     type="date"

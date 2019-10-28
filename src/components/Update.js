@@ -126,7 +126,7 @@ class Update extends Component {
             },
             body: JSON.stringify(this.state)
         }).then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => this.props.history.push('/'))
             
             .catch(err => console.log(err));
         
@@ -163,6 +163,7 @@ class Update extends Component {
         <div className="m_content-form">
             
              <div className="form-group">
+             <label className="m-0"> First Name :</label>
                  <input
                      name="FirstName"
                      type="text"
@@ -173,14 +174,10 @@ class Update extends Component {
                  />
              </div>
             
-            <div className="form-group">
-            <select  className="form-control" value={this.state.ManagerCode} onChange={(e) => this.setState({ ManagerCode: e.target.value })} >
-              <option>{this.state.ManagerCode}</option>
-              {optionItems}
-            </select>     
-            </div>
+           
 
              <div className="form-group">
+             <label className="m-0"> Last Name :</label>
                  <input
                      name="LastName"
                      type="text"
@@ -191,7 +188,17 @@ class Update extends Component {
                  />
                 
              </div>
+
              <div className="form-group">
+            <label className="m-0"> Manager Code :</label>
+            <select  className="form-control" value={this.state.ManagerCode} onChange={(e) => this.setState({ ManagerCode: e.target.value })} >
+              <option>{this.state.ManagerCode}</option>
+              {optionItems}
+            </select>     
+            </div>
+
+             <div className="form-group">
+             <label className="m-0"> Email :</label>
                  <input
                      name="Email"
                      value={this.state.Email}
@@ -203,18 +210,22 @@ class Update extends Component {
                
              </div>
              <div className="form-group">
+             <label className="m-0"> Emp Code :</label>
                  <input
                      name="EmpCode"
                      type="text"
                      value={this.state.EmpCode}
                      className="form-control"
                      placeholder="EmpCode"
+                     
+                     
                      onChange={(e) => this.setState({ EmpCode: e.target.value })}
                  />
                 
              </div>
            
              <div className="form-group">
+             <label className="m-0"> Time Stamp :</label>
                  <input
                      name="TimeStamp"
                      type="date"

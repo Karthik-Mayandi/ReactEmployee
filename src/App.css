@@ -164,3 +164,7 @@ th{
 li:nth-child(2){
   padding-right: 0px;
 }
+
+label {
+  margin: 0;
+}
