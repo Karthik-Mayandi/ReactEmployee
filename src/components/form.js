@@ -38,6 +38,7 @@ componentDidMount() {
             let {
                 isSubmitting,
                 errors,
+                handleSubmit
             } = this.props;
             return (
                 <div className="-content-center mt-7">
@@ -52,7 +53,7 @@ componentDidMount() {
 
                 <div className="m_content-form">
 
-                    <Form className="">
+                    <Form className="" onSubmit={handleSubmit}>
                     
                
                         <div className="form-group">
@@ -108,40 +109,23 @@ componentDidMount() {
                                     <Field className="form-check-input checkbox" name="IsManager" type="checkbox" id="inlineCheckbox1" value="" />
                                     
                                 </div>
-                                {errors.IsManager && <div className="text-danger">{errors.IsManager}</div>}
+                                {/* {errors.IsManager && <div className="text-danger">{errors.IsManager}</div>} */}
                             </div>
                             <div className="form-group">
                                 <Field
-                                    name="PartitionKey"
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="PartitionKey" />
-                                {errors.PartitionKey && <div className="text-danger">{errors.PartitionKey}</div>}
-                            </div>
-                            <div className="form-group">
-                                <Field
-                                    name="RowKey"
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="RowKey" />
-                                {errors.RowKey && <div className="text-danger">{errors.RowKey}</div>}
-                            </div>
-                            <div className="form-group">
-                                <Field
-                                    name="ETag"
+                                    name="TimeStamp"
                                     type="date"
                                     className="form-control"
-                                    placeholder="ETag"
+                                    placeholder="TimeStamp"
                                 />
-                                {errors.ETag && <div className="text-danger">{errors.ETag}</div>}
+                                {errors.TimeStamp && <div className="text-danger">{errors.TimeStamp}</div>}
                             </div>
                                     
                             <div className="text-right mb-3">
-                            <button type="submit" className="btn btn-primary ">
+                                <button className="btn btn-danger" onClick={() => this.props.history.push('/') }> Cancel </button>
+                                <button type="submit" className="btn btn-primary ml-3">
                                 {isSubmitting ? "Submitting..." : "Submit"}
                                 </button>
-                                <button className="btn btn-danger ml-3" onClick={() => this.props.history.push('/') }> Cancel </button>
-                              
                             </div>
                         </Form>
                         </div>
@@ -160,6 +144,8 @@ componentDidMount() {
             managerCode: Yup.string().required("Manager Code is required"),
             Timestamp:Yup.string().required("Select Date"),
             }),
+            validateOnChange:false,
+            validateOnBlur:false,
             handleSubmit: (values) => {
                 console.log(values.history, "handle");
 

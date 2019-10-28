@@ -3,6 +3,8 @@ import { Field, Form, withFormik } from 'formik';
 import * as Yup from 'yup';
 import '../App.css'
 import svg from '../assests/svg/undraw_personalization_triu (1).svg'
+import moment from 'moment';
+
 
 class Update extends Component {
     
@@ -43,10 +45,10 @@ class Update extends Component {
             LastName: data[0].LastName,
             IsManager: data[0].IsManager,
             ManagerCode: data[0].ManagerCode,
-            PartitionKey: data[0].PartitionKey,
-            RowKey: data[0].RowKey,
             Timestamp: data[0].Timestamp,
-            ETag: data[0].ETag
+            // PartitionKey: data[0].PartitionKey,
+            // RowKey: data[0].RowKey,
+            // ETag: data[0].ETag
     }
     )  
 
@@ -70,12 +72,12 @@ class Update extends Component {
                 LastName: data[0].LastName,
                 IsManager: data[0].IsManager,
                 ManagerCode: data[0].ManagerCode,
-                PartitionKey: data[0].PartitionKey,
-                RowKey: data[0].RowKey,
-                Timestamp: data[0].Timestamp,
-                ETag: data[0].ETag
+                Timestamp: moment(data[0].Timestamp).format('YYYY-MM-DD')
+                // PartitionKey: data[0].PartitionKey,
+                // RowKey: data[0].RowKey,                
+                // ETag: data[0].ETag
         })
-          
+          console.log('Date is :',moment(data[0].Timestamp).format('YYYY-MM-DD'));
             return fetch("https://pocemployeeapi.azurewebsites.net/api/Employee/ManagerList"); // make a 2nd request and return a promise
           }).then(function(response) {
             return response.json(); // pass the data as promise to next then block
@@ -115,7 +117,7 @@ class Update extends Component {
     saveData = (e) => {
        
   
-
+        console.log('New Data is '+ JSON.stringify(this.state));
         fetch(`https://pocemployeeapi.azurewebsites.net/api/Employee/Update`, {
             method: 'POST',
             headers: {
@@ -125,6 +127,7 @@ class Update extends Component {
             body: JSON.stringify(this.state)
         }).then(res => res.json())
             .then(data => console.log(data))
+            
             .catch(err => console.log(err));
         
     }
@@ -157,8 +160,8 @@ class Update extends Component {
                 </div>
                 
 
-                <div className="m_content-form">
-             
+        <div className="m_content-form">
+            
              <div className="form-group">
                  <input
                      name="FirstName"
@@ -213,12 +216,12 @@ class Update extends Component {
            
              <div className="form-group">
                  <input
-                     name="ETag"
-                     type="check-box"
-                     value={this.state.ETag}
+                     name="TimeStamp"
+                     type="date"
+                     value={this.state.Timestamp}
                      className="form-control"
                      placeholder="ETag"
-                     onChange={(e) => this.setState({ ETag: e.target.value })}
+                     onChange={(e) => this.setState({ Timestamp: e.target.value })}
                  />
                 
              </div>
@@ -228,14 +231,12 @@ class Update extends Component {
                 <label className="form-check-label">IsManager : </label>
                  <input className="form-check-input" type="checkbox" 
                     id="inlineCheckboxtrue" value={this.state.IsManager} checked={this.state.IsManager}
-                    onChange={(e) => this.setState({ IsManager: e.target.value })} 
+                    onChange={(e) => this.setState({ IsManager: !this.state.IsManager })} 
                    />
  
                       </div>
                       </div>
-
-             
-             <div className="form-group">
+             {/* <div className="form-group">
                  <input
                      name="PartitionKey"
                      type="text"
@@ -269,7 +270,7 @@ class Update extends Component {
                      onChange={(e) => this.setState({ ETag: e.target.value })}
                  />
                 
-             </div>
+             </div> */}
            
              <div className="text-right mb-3">
                  <button type="submit" className="btn btn-success" onClick={(e) => this.saveData(e)} >Save</button>

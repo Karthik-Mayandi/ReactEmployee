@@ -77,12 +77,8 @@ li{
   padding-top: 35px;
 }
 
-li:nth-child(2){
-  padding-right: 0px;
-}
-
 a{
-  font-size: 18px;
+  font-size: 14px;
   color: #000 !important;
 }
 
@@ -110,7 +106,9 @@ a{
 text-align: right;
 }
 
-
+/* .form-control{
+width: 80% !important;
+} */
 
 th{
   font-weight: 100 !important
@@ -153,7 +151,7 @@ th{
   margin-left: -5px;
 }
 
-
+/* ---- */
 
 .checkbox{
 
@@ -161,9 +159,5 @@ th{
     height: 20px;
     margin-left: 5px !important;
     margin-top: 3px  !important;
-}
-
-.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th{
-  font-size: 16px !important;
 }
 
