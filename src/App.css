@@ -77,6 +77,10 @@ li{
   padding-top: 35px;
 }
 
+li:nth-child(2){
+  padding-right: 0px;
+}
+
 a{
   font-size: 18px;
   color: #000 !important;
