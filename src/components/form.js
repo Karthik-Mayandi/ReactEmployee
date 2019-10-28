@@ -137,10 +137,11 @@ componentDidMount() {
                             </div>
                                     
                             <div className="text-right mb-3">
-                                <button className="btn btn-danger" onClick={() => this.props.history.push('/') }> Cancel </button>
-                                <button type="submit" className="btn btn-primary ml-3">
+                            <button type="submit" className="btn btn-primary ">
                                 {isSubmitting ? "Submitting..." : "Submit"}
                                 </button>
+                                <button className="btn btn-danger ml-3" onClick={() => this.props.history.push('/') }> Cancel </button>
+                              
                             </div>
                         </Form>
                         </div>
