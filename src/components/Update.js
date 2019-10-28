@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import '../App.css'
 import svg from '../assests/svg/undraw_personalization_triu (1).svg'
 import moment from 'moment';
+import Modal from './modal'
 
 
 class Update extends Component {
@@ -23,7 +24,8 @@ class Update extends Component {
             RowKey: "",
             Timestamp: "2019-10-23T07:36:33.2792588+00:00",
             ETag: "",
-            managerList:[]
+            managerList:[],
+            isOpen:false,
             
         }
     }
@@ -116,7 +118,7 @@ class Update extends Component {
 
     saveData = (e) => {
        
-  
+        const that = this;
         console.log('New Data is '+ JSON.stringify(this.state));
         fetch(`https://pocemployeeapi.azurewebsites.net/api/Employee/Update`, {
             method: 'POST',
@@ -126,18 +128,18 @@ class Update extends Component {
             },
             body: JSON.stringify(this.state)
         }).then(res => res.json())
-            .then(data => this.props.history.push('/'))
-            
+            .then(data =>this.props.history.push('/'))//
+            .then(function(data){alert("Data Updated SuccessFuly");})
             .catch(err => console.log(err));
         
     }
 
-    HandleDropdown = () =>{
-        console.log("HI")
-    }
-
     
-    
+    toggleModal = () => {
+        this.setState({
+          isOpen: !this.state.isOpen
+        });
+      }
     render() {
          let managers = this.state.managerList;
         console.log("xxxxx "+this.state.managerList);
@@ -149,6 +151,12 @@ class Update extends Component {
                 } >{manager.EmpCode}</option>
             );
       return (
+    <div>
+                <Modal show={this.state.isOpen}
+                onClose={this.toggleModal}>
+                    Here's some content for the modal
+                </Modal>
+          
         <div className="-content-center">
           <div className="mt-7">
 
@@ -217,7 +225,7 @@ class Update extends Component {
                      value={this.state.EmpCode}
                      className="form-control"
                      placeholder="EmpCode"
-                     
+                     readOnly
                      
                      onChange={(e) => this.setState({ EmpCode: e.target.value })}
                  />
@@ -293,6 +301,7 @@ class Update extends Component {
           </div> 
           </div>
           </div>
+    </div>
              )
         
     }

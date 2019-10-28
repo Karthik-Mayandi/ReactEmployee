@@ -38,7 +38,7 @@ componentDidMount() {
             let {
                 isSubmitting,
                 errors,
-                handleSubmit
+                
             } = this.props;
             return (
                 <div className="-content-center mt-7">
@@ -53,7 +53,7 @@ componentDidMount() {
 
                 <div className="m_content-form">
 
-                    <Form className="" onSubmit={handleSubmit}>
+                    <Form className="" >
                     
                
                         <div className="form-group">
@@ -115,7 +115,7 @@ componentDidMount() {
                                     <Field className="form-check-input checkbox" name="IsManager" type="checkbox" id="inlineCheckbox1" value="" />
                                     
                                 </div>
-                                {/* {errors.IsManager && <div className="text-danger">{errors.IsManager}</div>} */}
+                               
                             </div>
                             <div className="form-group">
                             <label className="m-0"> TimeStamp :</label>
@@ -149,7 +149,7 @@ componentDidMount() {
             lastName: Yup.string().required("Last Name is required"),
             email: Yup.string().email("Please enter valid email").required("Email is required"),
             managerCode: Yup.string().required("Manager Code is required"),
-            Timestamp:Yup.string().required("Select Date"),
+            TimeStamp:Yup.string().required("Select Date"),
             }),
             validateOnChange:false,
             validateOnBlur:false,
@@ -176,6 +176,7 @@ componentDidMount() {
                         })
                             }).then(res => res.json())
                             .then(data =>  values.history.push('/'))
+                            .then(data => alert("Data Saved SuccessFuly"))
                             .catch(err => console.log(err));
                             },
                             
