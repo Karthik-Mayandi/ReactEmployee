@@ -3,9 +3,11 @@ import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom'
 import List from './list';
 import Forms from './form';
 import Edit from './Update';
-import '../App.css'
+import '../App.css';
 import ManagerList from './managerList';
 import logo from '../assests/images/TP.png'
+import CourseAdd from '../components/Course/Course-add';
+import  AddMapping  from '../components/EmployeeCourseMapping/AddMapping';
 
 class Header extends Component {
     constructor(props){
@@ -43,7 +45,8 @@ class Header extends Component {
             <Route exact path = '/ManagerList' component = { ManagerList } />
             <Route exact path = '/Add' component = { Forms } />
             <Route exact path = '/Edit/:id' component = { Edit } />
-       
+            <Route exact path = '/AddCourse' component = { CourseAdd } />
+            <Route exact path = '/AddMapping' component = { AddMapping } />
 
             </Router>
         )

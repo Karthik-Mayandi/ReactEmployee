@@ -168,3 +168,26 @@ li:nth-child(2){
 label {
   margin: 0;
 }
+
+.margin{
+  margin-top: 100px;
+}
+
+
+/* Ant table */
+
+
+.ant-pagination{
+  display: none !important;
+}
+
+.ant-table-wrapper{
+  width: 90% !important;
+  margin: 0 auto;
+}
+
+/* Emp - course Mapping */
+.pt-10{
+  padding-top: 84px
+}
+
