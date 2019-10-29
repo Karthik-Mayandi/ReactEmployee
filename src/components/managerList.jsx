@@ -51,7 +51,6 @@ class ManagerList extends Component {
          
               
          
-            
            
             {(this.state.table.length > 0) ?
                 <table className="table table-hover">
