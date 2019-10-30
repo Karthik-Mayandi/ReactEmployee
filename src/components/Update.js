@@ -31,7 +31,7 @@ class Update extends Component {
     }
 
     setManagerData = (data) =>{
-        // console.log("Managers are "+JSON.stringify(data));
+
         this.setState({managerList:JSON.stringify(data)})
         
         
@@ -39,7 +39,7 @@ class Update extends Component {
     }
 
     setData = (data) => {
-        // console.log(data, "Data");
+   
     this.setState({
             FirstName: data[0].FirstName,
             Email: data[0].Email,
@@ -48,9 +48,7 @@ class Update extends Component {
             IsManager: data[0].IsManager,
             ManagerCode: data[0].ManagerCode,
             Timestamp: data[0].Timestamp,
-            // PartitionKey: data[0].PartitionKey,
-            // RowKey: data[0].RowKey,
-            // ETag: data[0].ETag
+           
     }
     )  
 
@@ -152,10 +150,6 @@ class Update extends Component {
             );
       return (
     <div>
-                <Modal show={this.state.isOpen}
-                onClose={this.toggleModal}>
-                    Here's some content for the modal
-                </Modal>
           
         <div className="-content-center">
           <div className="mt-7">
@@ -248,48 +242,14 @@ class Update extends Component {
              <div className="form-group">
                 <div className="form-check form-check-inline">
                 <label className="form-check-label">IsManager : </label>
-                 <input className="form-check-input" type="checkbox" 
+                 <input className="form-check-input -checkbox" type="checkbox" 
                     id="inlineCheckboxtrue" value={this.state.IsManager} checked={this.state.IsManager}
                     onChange={(e) => this.setState({ IsManager: !this.state.IsManager })} 
                    />
  
                       </div>
                       </div>
-             {/* <div className="form-group">
-                 <input
-                     name="PartitionKey"
-                     type="text"
-                     value={this.state.PartitionKey}
-                     className="form-control"
-                     placeholder="PartitionKey"
-                     onChange={(e) => this.setState({ PartitionKey: e.target.value })}
-                 />
-                
-             </div>
-             
-
-             <div className="form-group">
-                 <input
-                     name="RowKey"
-                     type="text"
-                     value={this.state.RowKey}
-                     className="form-control"
-                     placeholder="RowKey"
-                     onChange={(e) => this.setState({ RowKey: e.target.value })}
-                 />
-                
-             </div>
-             <div className="form-group">
-                 <input
-                     name="ETag"
-                     type="text"
-                     value={this.state.ETag}
-                     className="form-control"
-                     placeholder="ETag"
-                     onChange={(e) => this.setState({ ETag: e.target.value })}
-                 />
-                
-             </div> */}
+         
            
              <div className="text-right mb-3">
                  <button type="submit" className="btn btn-success" onClick={(e) => this.saveData(e)} >Save</button>

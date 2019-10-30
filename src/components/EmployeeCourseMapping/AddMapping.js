@@ -68,7 +68,8 @@ class AddMapping extends Component {
             <img className="m-form_img" src={svg} />
           </div>
 
-          <div className="m_content-form pt-10">
+          <div className="m_content-form m_center">
+          <div > 
             <Form>
               <div className="mb-3">
                 <label className="form-check-label">Employee : </label>
@@ -114,6 +115,7 @@ class AddMapping extends Component {
                 </button>
               </div>
             </Form>
+            </div>
           </div>
         </div>
       </div>

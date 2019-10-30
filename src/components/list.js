@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Update from "./Update";
 import "../App.css";
+import MyModal  from './Modal/Modal';
 
 class List extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class List extends Component {
           ></link>
 
           <div className="mt-7"> 
+          <MyModal/>
             <h3 className="head">Employee List</h3>
           
             <div>
