@@ -53,11 +53,20 @@ callme = (result) => {
   
   render() {
       return (
+        <div className="wrap">
+        <div className="-content-center"> 
           <div className="mt-7">
-          <div className="-content-center"> 
               <h3 className="head">Manager List</h3>
+              <div>
+            {(this.state.dataSource.length > 0) ? 
+            <div>
+              <Table dataSource={this.state.dataSource} columns={this.state.columns} />
               </div>
-              <Table dataSource={this.state.dataSource} columns={this.state.columns} />;
+              : <div className="content-center"><div className="spinner-border text-dark center"> </div>
+               <p className="spintext center top"> Please wait...</p></div> } 
+</div>
+          </div>
+          </div>
           </div>
       )
   }

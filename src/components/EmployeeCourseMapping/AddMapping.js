@@ -105,7 +105,7 @@ class AddMapping extends Component {
               <div className="text-right mb-3">
                 <button
                   className="btn btn-danger"
-                  onClick={() => this.props.history.push("/")}
+                  onClick={() => this.props.history.push("/MappingList")}
                 >
                   {" "}
                   Cancel{" "}
@@ -149,7 +149,7 @@ const EnhansedForm = withFormik({
       })
     })
       .then(res => res.json())
-      .then(data => values.history.push("/"))
+      .then(data => values.history.push("/MappingList"))
       .catch(err => console.log(err));
   },
 

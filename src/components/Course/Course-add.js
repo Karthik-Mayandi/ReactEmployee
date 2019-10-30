@@ -63,7 +63,7 @@ class CourseAdd extends Component {
                         {errors.Recommended && <div className="text-danger">{errors.Recommended}</div>}
                 </div>
                 <div className="text-right mb-3">
-                                <button className="btn btn-danger" onClick={() => this.props.history.push('/') }> Cancel </button>
+                                <button className="btn btn-danger" onClick={() => this.props.history.push('/CourseList') }> Cancel </button>
                                 <button type="submit" className="btn btn-primary ml-3">
                                 {isSubmitting ? "Submitting..." : "Submit"}
                                 </button>
@@ -109,7 +109,7 @@ const EnhancedForm = withFormik({
                 ETag: "sample string 8"
             })
                 }).then(res => res.json())
-                .then(data => values.history.push("/"))
+                .then(data => values.history.push("/CourseList"))
                 .then(data => alert("Data saved successfully.."))
                 .catch(err => console.log(err));
     },

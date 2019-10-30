@@ -65,20 +65,32 @@ callme = (result) => {
     
     render() {
         return (
-            <div className="mt-7">
-            <div className="-content-center"> 
-                <h3 className="head">Course List</h3>
-                <div className="addbtn  d-flex justify-content-end pb-2 pt-2">
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => this.props.history.push("/AddCourse")}
-                  >
-                    Add
-                  </button>
-                </div>
-          </div>
-                <Table dataSource={this.state.dataSource} columns={this.state.columns} />;
+          <div className="wrap">
+          <div className="-content-center">
+            <div className="mt-7"> 
+          
+              <h3 className="head">Course List</h3>
+            
+              <div>
+              {(this.state.dataSource.length > 0) ? 
+              <div>
+              <div className="addbtn  d-flex justify-content-end pb-2 pt-2">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => this.props.history.push("/AddCourse")}
+                >
+                  Add
+                </button>
+              </div>
+              <Table dataSource={this.state.dataSource} columns={this.state.columns} />;
+              </div>
+           : <div className="content-center"><div className="spinner-border text-dark center">
+  
+  </div>           <p className="spintext center top"> Please wait...</p></div>}
             </div>
+          </div>
+        </div>
+        </div>
         )
     }
 }
